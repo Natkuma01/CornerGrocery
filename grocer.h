@@ -18,5 +18,6 @@ class Grocery {
         map<string, int> groceryList;
 
 };
+string convert(string text);
 
 #endif

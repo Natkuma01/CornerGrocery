@@ -16,22 +16,24 @@ void Grocery::displayMenu() {
     cout << "********************************************************" << endl;
 }
 
-
+string convert(string text){
+    transform(text.begin(), text.end(), text.begin(), ::tolower);
+    return text;
+}
 
 void Grocery::readInputFile() {
-    map<string, int> groceryList;
     ifstream inFile;
     ofstream outFile;
     string item;
 
-    cout << "RUN";
     inFile.open("itemsRecord.txt");       // read from the text file
     if (!inFile.is_open()) {
         cout << "Could not open itemsRecord.txt" << endl;
     } //if
     
     while (getline(inFile, item)) {
-        groceryList[item]++;        
+        string lowercase = convert(item);
+        groceryList[lowercase]++;        
         
     }//while
 
@@ -50,14 +52,18 @@ void Grocery::readInputFile() {
 
 }
 
+
+
 void Grocery::findItem() {
+    string userInput;
     string item;
 
     cout << "Enter the item you are looking for: " << endl;
 
-    cin >> item;
+    cin >> userInput;
+    item = convert(userInput);
 
-    auto result =  groceryList.find(item);
+    auto result = groceryList.find(item);
     if (result != groceryList.end()) {
         cout << result->first << " " << result->second << endl;
     }
