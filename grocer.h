@@ -8,10 +8,15 @@
 
 using namespace std;
 
+class Grocery {
+    public:
+        void displayMenu();
+        void readInputFile();
+        void findItem();
 
-map<string, int> readInputFile(ifstream &inputFile);
+    private:
+        map<string, int> groceryList;
 
-void displayMenu();
-
+};
 
 #endif

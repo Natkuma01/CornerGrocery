@@ -14,12 +14,11 @@ using namespace std;
 
 int main() {
     int choice;
+    Grocery groceryList;
 
-    ifstream inputFile("itemsRecord.txt");
+    groceryList.readInputFile();        
 
-    map<string, int> groceryList = readInputFile(inputFile);        
-
-    displayMenu();
+    groceryList.displayMenu();
 
     cin >> choice;
     

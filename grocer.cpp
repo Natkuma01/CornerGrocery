@@ -7,7 +7,7 @@
 using namespace std;
 
 
-void displayMenu() {
+void Grocery::displayMenu() {
     cout << "******************** MENU CHOICES *********************" << endl;
     cout << " [1] Find Yout Grocery Item" << endl;
     cout << " [2] Display Grocery Item And Purchase Frequency" << endl;
@@ -18,7 +18,7 @@ void displayMenu() {
 
 
 
-map<string, int> readInputFile(ifstream &inputFile) {
+void Grocery::readInputFile() {
     map<string, int> groceryList;
     ifstream inFile;
     ofstream outFile;
@@ -28,7 +28,6 @@ map<string, int> readInputFile(ifstream &inputFile) {
     inFile.open("itemsRecord.txt");       // read from the text file
     if (!inFile.is_open()) {
         cout << "Could not open itemsRecord.txt" << endl;
-        return groceryList;
     } //if
     
     while (getline(inFile, item)) {
@@ -38,11 +37,9 @@ map<string, int> readInputFile(ifstream &inputFile) {
 
     inFile.close();
 
-
     outFile.open("frequency.dat");
     if (!outFile.is_open()) {
         cout << "Could not generate the grocery list." << endl;
-        return groceryList;
     }
 
     for (const auto& data : groceryList) {
@@ -50,6 +47,22 @@ map<string, int> readInputFile(ifstream &inputFile) {
     }
 
     outFile.close();
-    return groceryList;
+
+}
+
+void Grocery::findItem() {
+    string item;
+
+    cout << "Enter the item you are looking for: " << endl;
+
+    cin >> item;
+
+    auto result =  groceryList.find(item);
+    if (result != groceryList.end()) {
+        cout << result->first << " " << result->second << endl;
+    }
+    else {
+        cout << "No such item." << endl;
+    }
 
 }
