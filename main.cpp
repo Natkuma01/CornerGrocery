@@ -3,12 +3,40 @@
 * CS210 - Project Three
 * Purpose of the project: 
 */
-#include <iostream>
+#include <iostream> 
+#include <fstream>
+#include <map>
+#include "grocer.h"
+
+using namespace std;
+          
 
 
 int main() {
+    int choice;
+
+    ifstream inputFile("itemsRecord.txt");
+
+    map<string, int> groceryList = readInputFile(inputFile);        
+
+    displayMenu();
+
+    cin >> choice;
+    
+    switch (choice) {
+        case 1:
+            break;
+        case 2:
+            break;
+        case 3:
+            break;
+        case 4:
+            break;
+        default:
+            break;
+    }// switch
 
 
-
+    
     return 0;
 }

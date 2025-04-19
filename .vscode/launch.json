@@ -1,0 +1,13 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "C/C++ Runner: Debug Session",
+      "type": "lldb",
+      "request": "launch",
+      "args": [],
+      "cwd": "/Users/nataliechan/Desktop/SNHU/CS210/Assignment/project_three/project_three",
+      "program": "/Users/nataliechan/Desktop/SNHU/CS210/Assignment/project_three/project_three/build/Debug/outDebug"
+    }
+  ]
+}
