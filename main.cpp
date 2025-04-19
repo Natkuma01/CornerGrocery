@@ -27,10 +27,13 @@ int main() {
             groceryList.findItem();
             break;
         case 2:
+            groceryList.displayFrequency();
             break;
         case 3:
+            groceryList.showHistogram();
             break;
         case 4:
+            exitProgram();
             break;
         default:
             break;

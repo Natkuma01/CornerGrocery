@@ -53,7 +53,6 @@ void Grocery::readInputFile() {
 }
 
 
-
 void Grocery::findItem() {
     string userInput;
     string item;
@@ -71,4 +70,20 @@ void Grocery::findItem() {
         cout << "No such item." << endl;
     }
 
+}
+
+void Grocery::displayFrequency() {
+    for (auto &data : groceryList) {
+        cout << data.first << " " << data.second << endl;
+    }
+}
+
+void Grocery::showHistogram() {
+    for (auto &data : groceryList) {
+        cout << data.first << " " << string(data.second, '*') << endl;
+    }
+}
+
+void exitProgram() {
+    cin.get();
 }

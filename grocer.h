@@ -13,11 +13,14 @@ class Grocery {
         void displayMenu();
         void readInputFile();
         void findItem();
+        void displayFrequency();
+        void showHistogram();
 
     private:
         map<string, int> groceryList;
 
 };
 string convert(string text);
+void exitProgram();
 
 #endif
