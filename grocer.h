@@ -2,11 +2,12 @@
 #ifndef GROCER_H
 #define GROCER_H
 
-#include <map>
-#include <string>
-#include <fstream>
-
 using namespace std;
+
+extern int choice;
+extern int sentinel;
+
+
 
 class Grocery {
     public:
@@ -15,12 +16,16 @@ class Grocery {
         void findItem();
         void displayFrequency();
         void showHistogram();
+        int getValidChoice();
 
     private:
         map<string, int> groceryList;
 
 };
+
 string convert(string text);
 void exitProgram();
+bool isAlphabetOnly(string userInput);
+void clearScreen();
 
 #endif
