@@ -31,7 +31,7 @@ int main() {
         clearScreen();
         
         groceryList.displayMenu();       // display menu options
-        groceryList.getValidChoice();    // ensure user's input is numeric and inside the range       
+        choice = groceryList.getValidChoice();    // ensure user's input is numeric and inside the range       
     
         // perform an action based on user's choice
         switch (choice) {                
